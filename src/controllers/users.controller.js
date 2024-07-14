@@ -112,7 +112,7 @@ const updateUser = async (req, res) => {
    }
 }
 
-const activateInactivateUser = async () => {
+const activateInactivateUser = async (req, res) => {
    const { id } = req.params;
    const { status } = req.body;
 

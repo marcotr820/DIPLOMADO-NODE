@@ -91,14 +91,14 @@ async function taskDone(req, res) {
    const { userId } = req.user;
    const { done } = req.body;
    try {
-      const task = await Task.update({done}, {where: {id, userId}});
+      const task = await Task.update({ done }, { where: { id, userId } });
 
       if (task[0] === 0)
          return res.status(404).json({ message: "La tarea no fue actualizada." });
 
       res.json(task);
 
-   } catch (error) {
+   } catch (error) { 
       logger.error(error.message);
       res.status(500).json({
          message: error.message
